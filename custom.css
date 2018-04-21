@@ -13,3 +13,7 @@ body{
 	max-width: 70% !important;
 	margin-bottom: -48px;
 }
+.width{
+	width: 60%;
+	margin-left: 20%;
+}

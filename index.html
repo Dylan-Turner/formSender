@@ -14,6 +14,7 @@
 
     <!--Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://wikiki.github.io/css/documentation.css?v=201803291226">
     <link rel="stylesheet" href="custom.css">
 
     <script type="text/javascript" src="include.js"></script>
@@ -73,11 +74,100 @@
     <section class="hero is-light">
       <div class="hero-body">
         <div class="container">
-          <h1>aaa</h1>
+          <h1 class="title has-text-centered">Basic Usage</h1>
+
+          <article class="message is-danger width">
+            <div class="message-body">
+              <strong>Notice</strong><br/>
+              Currently the form processing file is down. This is because the email sending limit has been reached and no more emails can be sent. This should be fixed soon.
+            </div>
+          </article>
+          <p class="has-text-centered">
+
+            To use Form Sender simply make your HTML form with as many elements as you want. You can include inputs, textareas, selects and more. Once you have created your HTML form you need to add two hidden inputs, one for the email adress you would like the form to go to and one for the page that you want to re-direct to after the form has been successfully submitted. You then need to ensure that the form's action is to the correct adress.
+
+            <br/>
+            Example:
+          </p>
+            <code>
+              <pre>
+                &lt;form action=&quot;[ServerLink]&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
+
+                  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;ex@mple.com&quot;&gt;
+                  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;https://dylanturner.tech&quot;&gt;
+
+                  &lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
+                  &lt;input type=&quot;text&quot; name=&quot;email&quot; required&gt;
+                  &lt;textarea name=&quot;comments&quot; rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+
+                  &lt;input type=&quot;submit&quot; value=&quot;Submit results&quot; id=&quot;submitButton&quot;&gt;
+
+                &lt;/form&gt;
+              </pre>
+            </code>
+          <p class="has-text-centered">
+            You can have as many inputs as you want. If you are interested in more advanced usage, go see the documentation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-centered">Pricing</h1>
+
+
+            <div class="pricing-table">
+              <div class="pricing-plan">
+                <div class="plan-header">Basic</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency"></span>Free!</span></div>
+                <div class="plan-items">
+                  <div class="plan-item">Up to 100 Emails Daily</div>
+                  <div class="plan-item">Emails Archived</div>
+                  <div class="plan-item">-</div>
+                  <div class="plan-item">-</div>
+                </div>
+                <div class="plan-footer">
+                  <button class="button is-fullwidth" disabled="disabled">Current plan</button>
+                </div>
+              </div>
+
+              <div class="pricing-plan is-active">
+                <div class="plan-header">Pro</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>9</span>/month</div>
+                <div class="plan-items">
+                  <div class="plan-item">Unlimited Emails</div>
+                  <div class="plan-item">Invisible Emails</div>
+                  <div class="plan-item">No Emails Archive</div>
+                  <div class="plan-item"></div>
+                </div>
+                <div class="plan-footer">
+                  <button class="button is-fullwidth">Choose</button>
+                </div>
+              </div>
+
+              <div class="pricing-plan is-danger">
+                <div class="plan-header">Enterprise</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency"></span>$</span>/Contact</div>
+                <div class="plan-items">
+                  <div class="plan-item">Unlimited Emails</div>
+                  <div class="plan-item">Invisible Emails</div>
+                  <div class="plan-item">No Emails Archive</div>
+                  <div class="plan-item">Custom Instance!</div>
+                </div>
+                <div class="plan-footer">
+                  <button class="button is-fullwidth">Choose</button>
+                </div>
+              </div>
+            </div>
           
         </div>
       </div>
     </section>
+
+
     <section class="section">
       <div class="container">
         <hr/>
