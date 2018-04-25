@@ -17,9 +17,8 @@ body{
 	width: 60%;
 	margin-left: 20%;
 }
-.navbar{
-	height: 50px !important;
-	margin-bottom: 20px !important;
+.first{
+ margin-top: 50px !important;
 }
 .yellow:hover{
 	color: #f2e63c !important;
