@@ -26,9 +26,3 @@ body{
 .yellow{
 	color: #f2e63c !important;
 }
-p a{
-	color: #f2e63c !important;
-}
-p .a:hover{
-	color: #f2e63c !important;
-}
