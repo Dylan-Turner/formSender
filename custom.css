@@ -26,9 +26,9 @@ body{
 .yellow{
 	color: #f2e63c !important;
 }
-a{
+p a{
 	color: #f2e63c !important;
 }
-.a:hover{
+p .a:hover{
 	color: #f2e63c !important;
 }
