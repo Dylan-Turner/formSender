@@ -95,10 +95,10 @@
         <div class="container">
           <h1 class="title has-text-centered">Basic Usage</h1>
 
-          <article class="message is-danger width">
+          <article class="message is-success width">
             <div class="message-body">
               <strong>Notice</strong><br/>
-              Currently the processing file is unavailable. This is due to the email limit being reached on my current hosting - It should be back up soon.
+              Form sender is currently in its early stages, everything works although the documentation is currently limited. Further customisation of the forms and other features are comming soon.
             </div>
           </article>
           <br/>
@@ -112,14 +112,14 @@
           </p>
             <ul class="has-text-centered">
               <li>1. Create your form using any form tags that you want</li>
-              <li>2. Set the form's action to the correct link</li>
+              <li>2. Set the form's action to the correct link (https://formsender.000webhostapp.com/server.php)</li>
               <li>3. Add two inputs, one for the EMAILTO and one for the GOTO, ensure that you put the correct details in</li>
               <li>4. Test your email out and see if it works</li>
             </ul>
 
             <code>
               <pre>
-                &lt;form action=&quot;[ServerLink]&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
+                &lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
 
                   &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;ex@mple.com&quot;&gt;
                   &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;https://dylanturner.tech&quot;&gt;
