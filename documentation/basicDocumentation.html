@@ -19,6 +19,11 @@
 
     <script type="text/javascript" src="../include.js"></script>
     <script type="text/javascript" src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script type="text/javascript" src="../code.js"></script>
+    <script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+    <link rel="stylesheet" href="../highlight/styles/monokai-sublime.css">
+
     <meta name="description" content="Free form sendeing php">
 
     <title>Form Sender</title>
@@ -46,21 +51,151 @@
 
       <div class="column is-8">
         <div class="content">
-          <h1>Setup</h1>
-          <p>To setup please sign up and complete your registration to Form Sender.</p>
+          <h1>Basic Documentation</h1>
+          <ul>
+            <li>Introduction</li>
+            <li>Setup</li>
+            <li>Example</li>
+            <li>Troubleshooting</li>
+          </ul>
 
-          <h3>1. Set up the HTML form</h3>
+          <h3>Introduction</h3>
+          <p>Welcome to the basic setup. This guide is a tutorial that runs through the basics of how to setup a HTML form and include all the required attributes. If you are looking for a quick reference to all of the special name atributes which alter functionality have alook at the <a href="advanced.html">advanced documentation</a>. There is also a troubleshooting guide at the bottom of this page, check it out if you are having any issues.</p>
+
+          <h3>Setup</h3>
+          <p>Follow this tutorial below to setup your form. If you are struggling try copy and pasting the code and then editing it from there. If you are still stuggling check out the troubleshooting.</p>
+
+          <h5>1. Set up the HTML form</h5>
           <p>
-            Set up a HTML form, include as many input, textarea and other form tags as you want. Make sure that you set your HTML form's action to go to the correct server adress as such:
+            Lets start by making our opening <code>form</code> tag. The form tag lets our page know that we have a form on the page. The form tag has a few attributes, the <code>action</code>and <code>method</code> parts are required to get it to work. We have to set the action to be equal to the server.php file which makes the contact form work and we also should set the method to be POST as it is more secure than GET.
           </p>
-            <code>
-              <pre>
-&lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
-              </pre>
-            </code>
-
-
         </div>
+
+            <pre>
+              <code class="html">
+&lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot;&gt;       
+              </code>
+           </pre>
+
+        <div class="content">
+          <br/>
+          <p>
+            Now that we have our opening form tag we need to setup the two hidden inputs. These hidden inputs tell the server.php file information regarding who to send the email to and other important information. We should replace the [yourEmail] in the EMAILTO input with your email e.g example@gmail.com . You should not include the []. We also have to replace the [WhereyouwantyourpagetoGo] with a URL to the page you want to go. Both the <code>EMAILTO</code> input and the <code>GOTO</code> are required. You might want to set the GOTO URL to be a URL that says "Thanks for submitting the form" or something.
+
+            <br/>
+            * Note, you must hide these inputs yourself, try adding a class like <code>"hidden"</code> and then having in your css: 
+            <code>.hidden{
+              display: none
+            }
+          </code>
+          </p>
+        </div>
+          <pre>
+              <code class="html">
+&lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
+
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;[yourEmail]&quot;&gt;
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;[WhereyouwantyourpagetoGo]&quot;&gt;
+
+
+&lt;/form&gt;
+              </code>
+           </pre>
+
+        <div class="content">
+          <br/>
+          <p>
+            Now we have successfully set up the most basic version of the form. You can now start adding inputs. Please ensure that you include the <code>name</code> attribute otherwise it will not send that input. You can include Selects, Radio, Inputs, Textareas and any other form tag.
+          </p>
+        </div>
+          <pre>
+              <code class="html">
+&lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
+
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;[yourEmail]&quot;&gt;
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;[WhereyouwantyourpagetoGo]&quot;&gt;
+
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
+  &lt;input type=&quot;text&quot; name=&quot;email&quot; required&gt;
+  &lt;textarea name=&quot;comments&quot; rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+
+&lt;/form&gt;
+              </code>
+           </pre>
+        <div class="content">
+          <br/>
+          <p>
+            Now that we have got all the inputs the last thing to do is add a submit button.
+          </p>
+        </div>
+
+        <pre>
+              <code>
+&lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
+
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;[YourName@gmail.com]&quot;&gt;
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;[WhereyouwantyourpagetoGo]&quot;&gt;
+
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
+  &lt;input type=&quot;text&quot; name=&quot;email&quot; required&gt;
+  &lt;textarea name=&quot;comments&quot; rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; id=&quot;submitButton&quot;&gt;
+
+&lt;/form&gt;
+              </code>
+           </pre>
+
+          <div class="content">
+          <br/>
+          <p>
+            Congrats! We have set up our first contact form! Below is a working example of the contact form using the same code as above. Notice that the two hidden inputs are not hidden. This is so that you can play around with it and send the email to your own email. Just change the two inputs called EMAILTO and GOTO. If you are looking for more advanced documentation, for example how to CC, BBC, set a reply email and more check out the <a href="advanced.html">advanced documentation</a>.
+          </p>
+        </div>
+        <h3>Example</h3>
+          <p>Below is a working example using the above code.</p>
+
+          <form action="https://formsender.000webhostapp.com/server.php" method="POST" id="form">
+
+              <label class="label">Change this to send the email to a different adress. Please note that you must sign up with the email you are going to send it to for it to work.</label>
+              <input class="input" type="text" name="EMAILTO" value="sendscamstuffhere@gmail.com">
+              <br/>
+              <br/>
+              <label class="label">This is the location the page will re-direct to</label>
+              <input class="input" type="text" name="GOTO" value="https://dylan-turner.github.io/formSender/documentation/basicDocumentation.html">
+
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input name="name" class="input" type="text" placeholder="e.g Alex Smith" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input name="email" class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                </div>
+                <p class="help">This isn't actually required, you can leave this blank.</p>
+              </div>
+
+              <br/>
+
+             <div class="field">
+                <label class="label">Comments:</label>
+                <div class="control">
+                      <textarea name="comments" class="textarea" placeholder="e.g Please put me on the Do Not Send list, I keep getting spam emails"></textarea>
+                  </div>
+              </div>
+
+              <input class="button" type="submit" value="Submit" id="submitButton">
+
+          </form>
+
+
+
+
+
       </div>
 
 
