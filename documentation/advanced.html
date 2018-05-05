@@ -1,0 +1,266 @@
+<html>
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115152057-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115152057-1');
+    </script>
+    <!-- End Google Analytics -->
+
+    <!--Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://wikiki.github.io/css/documentation.css?v=201803291226">
+    <link rel="stylesheet" href="../custom.css">
+
+    <script type="text/javascript" src="../include.js"></script>
+    <script type="text/javascript" src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script type="text/javascript" src="../code.js"></script>
+    <script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+    <link rel="stylesheet" href="../highlight/styles/monokai-sublime.css">
+
+    <meta name="description" content="Free form sendeing php">
+
+    <title>Form Sender</title>
+  </head>
+  <body>
+    <div id="nav">
+      
+      <nav class="navbar is-dark">
+        <div class="container">
+
+          
+          <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+              Home
+            </a>
+            
+          </div>
+
+          <div id="navbarExampleTransparentExample" class="navbar-menu is-active">
+            <div class="navbar-start">
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="basicDocumentation.html">
+                  Documentation
+                </a>
+                <div class="navbar-dropdown is-boxed">
+                  <a class="navbar-item" href="basicDocumentation.html">
+                    How To Use
+                  </a>
+                  <a class="navbar-item is-disabled" href="advanced.html">
+                    Advanced Usage
+                  </a>
+                  <a class="navbar-item" href="../contact.html">
+                    Feature Request
+                  </a>
+                  <hr class="navbar-divider">
+                  <a class="navbar-item" href="../help.html">
+                    Help
+                  </a>
+                  <a class="navbar-item is-active" href="../help.html">
+                    Report Bug
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="field is-grouped">
+                  <p class="control">
+                    <a class="button is-warning is-outlined" href="../signUp.html">
+                      <span class="icon">
+                        <i class="far fa-user"></i>
+                      </span>
+                      <span>Sign Up</span>
+                    </a>
+                    <a class="button is-danger is-outlined" href="../contact.html">
+                      <span class="icon">
+                        <i class="far fa-envelope-open"></i>
+                      </span>
+                      <span>Contact</span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </nav>
+
+
+    </div>  
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Advanced Documentation <span class="tag is-warning">Beta</span>
+          </h1>
+          <h2 class="subtitle">
+            Advanced documentation for Form Sender.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <hr/>
+
+    <div class="columns">
+      <div class="column">
+        
+      </div>
+
+
+      <div class="column is-8">
+
+        <div class="content">
+          <h1>Advanced Documentation</h1>
+          <ul>
+            <li>Introduction</li>
+            <li>Documentation</li>
+          </ul>
+
+          <h3>Introduction</h3>
+          <p>Welcome to the advanced documentation. This guide is <strong>not</strong> a tutorial. If you are looking for basic documentation please look at the <a href="basicDocumentation.html">basic documentation</a>. This page is a guide to all the custom input fields that you can add that modify the functionality. Please ensure that if you are to use any of these that the <code>name</code> attribute is applied correctly.</p>
+
+          <h3>Documentation</h3>
+          <p>You can add specially named <code>named</code> attributes which can apply special functionality to your form.</p>
+
+          <br/>
+          <br/>
+
+
+          <h5>
+            <code>EMAILTO</code> <a class="button is-small is-outlined is-danger is-static">Required</a>
+          </h5> 
+          <p>
+            The EMAILTO name sets the desired email adress that the email should be sent to. Without this nothing will work so be sure to include it.
+          </p>
+
+            <pre>
+              <code class="html">
+&lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;youremail@gmail.com&quot;&gt;
+              </code>
+           </pre>
+
+          <hr/>
+
+          <h5>
+            <code>GOTO</code> <a class="button is-small is-outlined is-danger is-static">Required</a>
+          </h5> 
+          <p>
+            The GOTO name allows you to re-direct your users to any page. Make sure that you type to correct URL. You should also hide this input. Although you don't have to set this for the form to work, without it the form will automatically redirect to the Form Sender home page.
+          </p>
+
+            <pre>
+              <code class="html">
+&lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;URL&quot;&gt;
+              </code>
+           </pre>
+
+          <hr/>
+
+          <h5><code>FROM</code></h5>
+          <p>
+            The FROM name can be used to specify who the email is from. When users submit the form, add the FROM input to get their email and allow you to reply directly to the email without having to create a new email.
+          </p>
+
+            <pre>
+              <code class="html">
+&lt;input type=&quot;email&quot; name=&quot;FROM&quot; required&gt;      
+              </code>
+           </pre>
+
+
+
+          <hr/>
+
+          <h5><code>SUBJECT</code> <a class="button is-small is-outlined is-warning is-static">Coming Soon!</a></h5>
+          <p>
+            SUBJECT is the subject of the email.
+          </p>
+
+            <pre>
+              <code class="html">
+&lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;SUBJECT&quot; value=&quot;Put your subject here&quot; &gt;      
+              </code>
+           </pre>
+
+           <hr/>
+
+          <h5><code>CC</code> and <code>BCC</code> <a class="button is-small is-outlined is-info">Pro</a> <a class="button is-small is-outlined is-warning">Coming Soon</a></h5>
+          <p>
+            CC and BCC allows you to send multiple emails to different places. For example you might want to send the email to yourself but also CC it to an archive email. The ability to CC multiple email adresses is coming soon!
+          </p>
+
+            <pre>
+              <code class="html">
+&lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;CC&quot; value=&quot;email@gmail.com&quot; &gt;      
+              </code>
+           </pre>
+
+           <h5>Invisible Emails <a class="button is-small is-outlined is-info">Pro</a></h5>
+          <p>
+            Invisible Emails allows you to send an email without putting your email adress in the <code>EMAILTO</code> attribute. Instead of putting your email you will be given a random string for example "pe7vbdkmt" which will replace your email. Now when you send emails you will still recieve them but it will automatically send it to your adress without you putting in your email adress. This is great to avoid bots and spammers getting your email adress and spamming you.
+          </p>
+
+            <pre>
+              <code class="html">
+&lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;pe7vbdkmt&quot;&gt;   
+              </code>
+           </pre>
+
+           <h5>Attachments <a class="button is-small is-outlined is-info">Pro</a> <a class="button is-small is-outlined is-warning">Coming Soon</a></h5>
+          <p>
+            Add an attachment to your form. To do this change the type of your field to be file. You can add multiple attachments by having multiple file input fields and naming them differently.
+          </p>
+
+            <pre>
+              <code class="html">
+&lt;input class=&quot;hidden&quot; type=&quot;file&quot; name=&quot;Attachment&quot; &gt;   
+              </code>
+           </pre>
+
+
+           <h5>This concludes the advanced usage. Got an idea? Please <a href="../contact.html">contact me</a> to submit an idea! If you submit a good idea you will win a free pro licence for a year!</h5>
+
+        
+          </div>
+      </div>
+
+
+      <div class="column">
+        
+      </div>
+     
+    </div>
+
+     <section class="section">
+      <div class="container">
+        <hr/>
+        <p class="is-small">Last Updated: 5/5/2018, Created 5/5/2018
+        <div class="field is-grouped is-grouped-multiline">
+          <div class="control">
+            <div class="tags has-addons">
+              <span class="tag is-dark">Version</span>
+              <span class="tag">0.0.1</span>
+            </div>
+          </div>
+        </div>
+        </p>
+      </div>
+    </section>
+    <br/>
+    <div include="../footer.html"></div>
+  </body>
+  
+  <script>
+    includeHTML();
+  </script>
+</html>
