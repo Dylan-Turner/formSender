@@ -258,8 +258,41 @@
               <input class="button" type="submit" value="Submit" id="submitButton">
 
           </form>
+          <div class="content">
+            <h3>Troubleshooting</h3>
+            <p>If you are having trouble setting this up, try some of the common issues listed below. If you have tried these and still have issues please <a href="../contact.html">contact me</a></p>
+
+            <h5>The email wont send</h5>
+
+            <p>If the page re-directs successfully to the GOTO link: <br/>
+              Please contact me.
+            </p>
+            <p>The page is stuck on the server.php<br/>
+              This means that there is an issue with your form that is breaking the form sending. If there are errors, try to work out what they are. Some common issues are:
+
+              <ul>
+                <li>You haven't signed up or you have miss-typed your email</li>
+                <li>You have forgotten to put a <code>name</code> attribute on each of your inputs</li>
+                <li>You haven't included the GOTO input tag.</li>
+                <li>You are on the Do Not Send list.</li>
+              </ul>
+            </p>
+
+            <h5>Error: there is no body content</h5>
+
+            <p>This means that you havent added the <code>name</code> attribute on each of your inputs and therefore no input is being sent</p>
+
+            <h5>I'm not recieving a certain input?</h5>
+
+            <p>This means that you havent added the <code>name</code> attribute on the specific input and therefore the input isnt being sent.</p>
+
+            <h5>Other</h5>
+
+            <p>If you are experiancing any other error please contact me. I will update this with more troubleshooting fix's as more people contact me to let me know what issues they are having.</p>
 
 
+
+          </div>
 
 
 
@@ -271,3 +304,27 @@
       </div>
      
     </div>
+
+     <section class="section">
+      <div class="container">
+        <hr/>
+        <p class="is-small">Last Updated: 5/5/2018, Created 5/5/2018
+        <div class="field is-grouped is-grouped-multiline">
+          <div class="control">
+            <div class="tags has-addons">
+              <span class="tag is-dark">Version</span>
+              <span class="tag">0.0.1</span>
+            </div>
+          </div>
+        </div>
+        </p>
+      </div>
+    </section>
+    <br/>
+    <div include="footer.html"></div>
+  </body>
+  
+  <script>
+    includeHTML();
+  </script>
+</html>
