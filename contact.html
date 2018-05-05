@@ -22,6 +22,11 @@
     <meta name="description" content="Free form sendeing php">
 
     <title>Form Sender</title>
+    <style>
+    .hidden{
+      display: none !important;
+    }
+    </style>
   </head>
   <body>
     <div id="nav" include="../menu.html"></div>  
@@ -49,6 +54,41 @@
           <h1>Contact</h1>
           <p>Please fill out the form below (yes, it does run using this service :) ) and provide as much detail as possible. I will try to respond within one day.</p>
 
+
+          <form action="https://formsender.000webhostapp.com/server.php" method="POST" id="form">
+
+              <input class="hidden" type="text" name="EMAILTO" value="dylan@dylanturner.tech">
+              <input class="hidden" type="text" name="GOTO" value="https://dylan-turner.github.io/formSender">
+
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="e.g Alex Smith" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                </div>
+                <p class="help">This is required if you expect a reply back.</p>
+              </div>
+
+              
+
+              <br/>
+
+             <div class="field">
+                <label class="label">Comments:</label>
+                <div class="control">
+                      <textarea class="textarea" placeholder="e.g Please put me on the Do Not Send list, I keep getting spam emails"></textarea>
+                  </div>
+              </div>
+
+              <input class="button" type="submit" value="Submit" id="submitButton">
+
+          </form>
           
 
         </div>

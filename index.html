@@ -19,6 +19,12 @@
 
     <script type="text/javascript" src="include.js"></script>
     <script type="text/javascript" src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+    <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+    <link rel="stylesheet" href="highlight/styles/monokai-sublime.css">
+
+
+
     <meta name="description" content="Free form sendeing php">
 
     <title>Form Sender</title>
@@ -116,23 +122,22 @@
               <li>3. Add two inputs, one for the EMAILTO and one for the GOTO, ensure that you put the correct details in</li>
               <li>4. Test your email out and see if it works</li>
             </ul>
+            <pre>
+              <code>
+&lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
 
-            <code>
-              <pre>
-                &lt;form action=&quot;https://formsender.000webhostapp.com/server.php&quot; method=&quot;POST&quot; id=&quot;form&quot;&gt;
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;[YourName@gmail.com]&quot;&gt;
+  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;[WhereyouwantyourpagetoGo]&quot;&gt;
 
-                  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;EMAILTO&quot; value=&quot;[YourName@gmail.com]&quot;&gt;
-                  &lt;input class=&quot;hidden&quot; type=&quot;text&quot; name=&quot;GOTO&quot; value=&quot;[WhereyouwantyourpagetoGo]&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
+  &lt;input type=&quot;text&quot; name=&quot;email&quot; required&gt;
+  &lt;textarea name=&quot;comments&quot; rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
 
-                  &lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
-                  &lt;input type=&quot;text&quot; name=&quot;email&quot; required&gt;
-                  &lt;textarea name=&quot;comments&quot; rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit results&quot; id=&quot;submitButton&quot;&gt;
 
-                  &lt;input type=&quot;submit&quot; value=&quot;Submit results&quot; id=&quot;submitButton&quot;&gt;
-
-                &lt;/form&gt;
-              </pre>
-            </code>
+&lt;/form&gt;
+              </code>
+           </pre>
           <p class="has-text-centered">
             You can have as many inputs as you want. If you are interested in more advanced usage, go see the documentation.
           </p>
