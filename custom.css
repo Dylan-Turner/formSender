@@ -2,16 +2,16 @@
 body{
 	font-family: 'Muli', sans-serif;
 }
-.is-dark{
+.is-darks{
 	background-color: #24292e !important;
 }
 .customDark{
 	background-color: #2b3137 !important;
 }
 #index-img{
-	max-height: 450px !important;
+	max-height:100px !important;
 	max-width: 70% !important;
-	margin-bottom: -48px;
+	border-radius: 50%;
 }
 .width{
 	width: 60%;
