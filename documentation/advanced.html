@@ -27,6 +27,27 @@
     <meta name="description" content="Free form sendeing php">
 
     <title>Form Sender</title>
+
+<style>
+.redacted span {
+  position: relative;
+  white-space: pre;
+}
+.redacted span:after {
+  background: black;
+  border-radius: 0.1em;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
+  content: " ";
+  width: 100%;
+  height: 1.2em;
+  left: 0;
+  position: absolute;
+  -webkit-transform: skewY(-5deg) rotate(5deg);
+          transform: skewY(-5deg) rotate(5deg);
+}
+
+          </style>
+
   </head>
   <body>
     <div id="nav">
@@ -177,7 +198,18 @@
               </code>
            </pre>
 
+           
 
+           <h5 class="redacted"><code><span>FLAG</span></code></h5>
+          <p class="redacted">
+            The <span>FLAG</span> name is special and is currently being used for a <span>CTF</span> challenge I am running. To use it correctly, include it in your form. The value must be <span> <code>gimme</code>,</span> otherwise <span>it will not work</span>.
+          </p>
+
+            <pre>
+              <code class="html redacted">
+&lt;input <span>FLAG type=&quot;text&quot; name=&quot;FLAG&quot; value=&quot;?&quot;&gt; </span>&gt;      
+              </code>
+           </pre>
 
           <hr/>
 
